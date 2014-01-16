@@ -61,3 +61,11 @@ function install_powerline_precmd() {
 
 install_powerline_precmd
 
+export PATH=/usr/local/bin:$PATH
+
+#nvm
+source $HOME/.nvm/nvm.sh
+
+# scala
+export SCALA_HOME=/usr/local/share/scala-2.10.2
+export PATH=$PATH:$SCALA_HOME/bin
