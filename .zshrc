@@ -18,8 +18,6 @@ setopt equals            # =commandを`which command`と同じ処理にする
 setopt extended_glob # グロブ機能を拡張する
 unsetopt caseglob    # ファイルグロブで大文字小文字を区別しない
 
-
-
 # improve cd
 setopt auto_cd
 setopt auto_pushd
@@ -69,3 +67,15 @@ source $HOME/.nvm/nvm.sh
 # scala
 export SCALA_HOME=/usr/local/share/scala-2.10.2
 export PATH=$PATH:$SCALA_HOME/bin
+
+# ls
+autoload -U compinit
+compinit
+
+export LSCOLORS=exfxcxdxbxegedabagacad
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+
+alias ls="ls -GF"
+zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
