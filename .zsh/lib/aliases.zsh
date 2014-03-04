@@ -16,6 +16,8 @@ alias sl=ls # often screw this up
 # git
 alias gs='git status'
 alias gd='git diff --color'
+alias gdc='git diff --cached --color'
+alias gco='git checkout'
 
 # log
 alias plog='tail -f /var/log/apache2/error_log'
