@@ -15,7 +15,8 @@ setopt notify            # バックグラウンドジョブの状態変化を�
 setopt equals            # =commandを`which command`と同じ処理にする
 
 ### Glob ###
-setopt extended_glob # グロブ機能を拡張する
+# HEAD^が使えなくなるのでコメントアウト
+#setopt extended_glob # グロブ機能を拡張する
 unsetopt caseglob    # ファイルグロブで大文字小文字を区別しない
 
 # improve cd
@@ -41,9 +42,10 @@ e_BLUE=`echo -e "¥033[1;36m"`
 autoload bashcompinit
 bashcompinit
 
-for conf (~/.zsh/lib/*.zsh) source $conf
+for conf (~/dotfiles/.zsh/lib/*.zsh) source $conf
 
 
+# powerline
 function powerline_precmd() {
     export PS1="$(~/powerline-shell.py $? --shell zsh)"
 }
@@ -57,12 +59,12 @@ function install_powerline_precmd() {
     precmd_functions+=(powerline_precmd)
 }
 
-install_powerline_precmd
+#install_powerline_precmd
 
 export PATH=/usr/local/bin:$PATH
 
 #nvm
-source $HOME/.nvm/nvm.sh
+#source $HOME/.nvm/nvm.sh
 
 # ls
 autoload -U compinit
