@@ -64,10 +64,6 @@ export PATH=/usr/local/bin:$PATH
 #nvm
 source $HOME/.nvm/nvm.sh
 
-# scala
-export SCALA_HOME=/usr/local/share/scala-2.10.2
-export PATH=$PATH:$SCALA_HOME/bin
-
 # ls
 autoload -U compinit
 compinit
@@ -78,4 +74,9 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 alias ls="ls -GF"
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# rbenv
+export RBENV_ROOT="$HOME/.rbenv"
+if [ -d $RBENV_ROOT ]; then
+    export PATH="$RBENV_ROOT/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
