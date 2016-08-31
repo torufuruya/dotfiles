@@ -82,3 +82,10 @@ if [ -d $RBENV_ROOT ]; then
     export PATH="$RBENV_ROOT/bin:$PATH"
     eval "$(rbenv init -)"
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# history
+alias history="history -i"
+bindkey "^R" history-incremental-search-backward
+bindkey "^S" history-incremental-search-forward
