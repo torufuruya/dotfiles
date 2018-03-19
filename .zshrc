@@ -3,9 +3,9 @@
 # ------------------------------
  
 # vim kaoriya
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+#export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+#alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
 setopt no_beep           # ビープ音を鳴らさないようにする
 setopt auto_cd           # ディレクトリ名の入力のみで移動する
@@ -42,7 +42,7 @@ e_BLUE=`echo -e "¥033[1;36m"`
 autoload bashcompinit
 bashcompinit
 
-for conf (~/dotfiles/.zsh/lib/*.zsh) source $conf
+for conf (~/Private/dotfiles/.zsh/lib/*.zsh) source $conf
 
 
 # powerline
