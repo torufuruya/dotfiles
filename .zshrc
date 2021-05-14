@@ -76,16 +76,49 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 alias ls="ls -GF"
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-# rbenv
-export RBENV_ROOT="$HOME/.rbenv"
-if [ -d $RBENV_ROOT ]; then
-    export PATH="$RBENV_ROOT/bin:$PATH"
-    eval "$(rbenv init -)"
-fi
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # history
 alias history="history -i"
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
+
+# fastlane
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# JAVA
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+
+# Android
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_SDK/emulator
+export PATH=$PATH:$ANDROID_SDK/platform-tools
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# pyenv
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+
+# rbenv
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export RBENV_ROOT="$HOME/.rbenv"
+if [ -d $RBENV_ROOT ]; then
+    export PATH="$RBENV_ROOT/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
+
+# Load .bash_profile for secure info
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile;
+fi
